@@ -1,0 +1,17 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+
+<div class="header-bar">
+    <a href="{% url 'todos' %}">&#8592; Back</a>
+</div>
+
+
+<div class="card-body"></div>
+    <form action="{% url 'todos-update' form.instance.pk %}" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="button" type="submit" value="Submit">
+    </form>
+</div>
+{% endblock %}

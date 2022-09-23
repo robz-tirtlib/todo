@@ -1,0 +1,16 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+
+<div class="header-bar">
+    <a href="{% url 'todos' %}">&#8592; Go Back</a>
+</div>
+
+<div class="card-body">
+    <form method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete "{{ object }}"?</p>
+        <input class="button" type="submit" value="Confirm">
+    </form>
+</div>
+{% endblock %}
